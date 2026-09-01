@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>78 días para volver a verte ❤️</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:linear-gradient(145deg,#fff5f7,#f7f1ff);color:#342735;min-height:100vh}.wrap{max-width:720px;margin:auto;padding:28px 18px 60px}.hero{text-align:center;padding:28px 12px}.heart{font-size:42px}.eyebrow{letter-spacing:2px;text-transform:uppercase;font-size:12px;color:#a15a7b}.hero h1{font-size:clamp(32px,8vw,56px);line-height:1.02;margin:10px 0}.hero p{font-size:17px;color:#6c5b67}.count{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:22px 0}.unit{background:#fff;border-radius:18px;padding:13px 17px;min-width:78px;box-shadow:0 8px 25px #4a264012}.num{display:block;font-size:28px;font-weight:800}.lab{font-size:11px;text-transform:uppercase;color:#887681}.card{background:#fff;border-radius:25px;padding:24px;box-shadow:0 12px 35px #4a264015;margin-top:18px}.today{border:1px solid #f0d6df}.tag{display:inline-block;border-radius:999px;padding:7px 11px;background:#fff0f4;color:#a34268;font-size:12px;font-weight:700}.card h2{margin:14px 0 8px}.msg{font-size:18px;line-height:1.65;white-space:pre-line}.locked{opacity:.7}.days{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:16px}.day{border:0;border-radius:13px;padding:10px 4px;background:#f4eef3;color:#594a56;font-weight:700;cursor:pointer}.day.open{background:#fff0f4}.day.today{outline:2px solid #c66b91}.day:disabled{cursor:not-allowed}.footer{text-align:center;color:#8a7984;font-size:12px;margin-top:25px}.photo{width:100%;border-radius:18px;margin-top:14px;display:none}button:focus{outline:3px solid #e4a5bd;outline-offset:2px}@media(max-width:450px){.days{grid-template-columns:repeat(5,1fr)}.card{padding:20px}.msg{font-size:17px}}
+</style>
+</head>
+<body><main class="wrap">
+<section class="hero"><div class="heart">❤️</div><div class="eyebrow">Un regalo para nosotros</div><h1>Cada día más cerca de ti</h1><p>Del 2 de septiembre al 18 de noviembre de 2026.<br>Un pequeño pedacito de mí para cada día que nos separa.</p><div class="count"><div class="unit"><span class="num" id="days">78</span><span class="lab">días</span></div><div class="unit"><span class="num" id="hours">00</span><span class="lab">horas</span></div><div class="unit"><span class="num" id="mins">00</span><span class="lab">minutos</span></div><div class="unit"><span class="num" id="secs">00</span><span class="lab">segundos</span></div></div></section>
+<section class="card today"><span class="tag" id="tag">💌 Mensaje de hoy</span><h2 id="title">Día 1 — Comenzamos</h2><div class="msg" id="message"></div><img id="photo" class="photo" alt="Foto especial"></section>
+<section class="card"><span class="tag">📅 Nuestra cuenta regresiva</span><div class="days" id="daysGrid"></div></section>
+<div class="footer">Hecho con amor, pensando en ti. ❤️<br>La sorpresa de cada día se desbloquea automáticamente.</div>
+</main>
+<script>
+const start=new Date('2026-09-02T00:00:00-06:00');
+const end=new Date('2026-11-18T23:59:59-06:00');
+const personal=new Set([4,9,15,21,28,34,40,47,53,59,64,69,73,76,77]);
+const content=[
+['💌 Mensaje de hoy','Comenzamos esta cuenta regresiva. No importa cuántos kilómetros haya entre nosotros: cada día que pasa nos acerca un poquito más a ese abrazo que tanto quiero darte. ❤️'],
+['🥰 Algo que amo de ti','Amo la forma en que puedes hacer que un día normal se sienta especial simplemente apareciendo en mi pantalla.'],
+['🎵 Canción','Hoy elige una canción que te recuerde a nosotros. Cuando la escuches, imagina que estoy ahí contigo. ❤️'],
+['✍️ Tu día','ESCRIBE AQUÍ TU MENSAJE PERSONAL. Puedes contarle qué sentiste al despertar pensando en ella, agregar una foto o recordar un momento especial.'],
+['❓ Pregunta','Si ahora mismo pudiéramos desaparecer juntos durante 24 horas, ¿a dónde nos iríamos? ✈️'],
+['💖 Un pequeño recordatorio','No necesito que todos los días sean perfectos. Me basta saber que seguimos construyendo algo bonito, incluso desde lejos.'],
+['📸 Recuerdo','Aquí puedes contar la historia de una foto favorita de ustedes. ¿Qué recuerdas exactamente de ese día?'],
+['✈️ Pista','Cada día que pasa significa una cosa: estamos más cerca de dejar de extrañarnos por una pantalla.'],
+['✍️ Tu día','ESCRIBE AQUÍ TU MENSAJE PERSONAL. Puedes poner una anécdota que solo ustedes dos entiendan.'],
+['💌 Carta corta','Si pudiera mandarte un abrazo dentro de este enlace, lo haría. Mientras tanto, recibe estas palabras: te extraño, te pienso y te quiero muchísimo.'],
+['🎁 Sorpresa','Hoy tienes una misión: imagina cómo será nuestro primer abrazo cuando volvamos a vernos. ¿Quién va a abrazar más fuerte? ❤️'],
+['❓ Pregunta','¿Qué es algo que todavía sueñas con hacer conmigo?'],
+['🥰 Algo que amo de ti','Me encanta que seas tú. No una versión perfecta, no alguien diferente: tú, con tus días buenos, tus días difíciles y todo lo que te hace especial.'],
+['🎵 Canción','Pon nuestra canción favorita y escucha los primeros 30 segundos pensando en el próximo reencuentro.'],
+['✍️ Tu día','ESCRIBE AQUÍ TU MENSAJE PERSONAL. Este día es completamente tuyo para decirle algo que no quieres que se le olvide.'],
+['💖 Nosotros','La distancia me ha enseñado que querer a alguien también es aprender a esperar, confiar y seguir eligiéndose.'],
+['❓ Pregunta','¿Cuál ha sido uno de tus momentos favoritos conmigo hasta ahora?'],
+['📸 Recuerdo','Elige una foto de nosotros y escribe tres cosas que recuerdes de ese momento.'],
+['✈️ Cuenta regresiva','Ya llevamos varios días. Mira hacia atrás: todo lo que hemos esperado también forma parte de nuestra historia.'],
+['💌 Mensaje','Si hoy me extrañas, recuerda esto: yo también estoy contando los días. ❤️'],
+['✍️ Tu día','ESCRIBE AQUÍ TU MENSAJE PERSONAL. Agrega aquí una foto si quieres.'],
+['❓ Pregunta','¿Qué sería lo primero que me dirías cuando nos viéramos?'],
+['🥰 Algo que amo de ti','Me encanta cómo un mensaje tuyo puede cambiar completamente mi ánimo.'],
+['🎁 Sorpresa','Hoy piensa en un plan sencillo que quieras hacer conmigo cuando estemos juntos. Guárdalo para ese día.'],
+['🎵 Canción','Dedícale hoy una canción. Puedes reemplazar este texto con el nombre y una frase sobre por qué la elegiste.'],
+['💖 Nosotros','No quiero solamente llegar al día de vernos. Quiero disfrutar también cada día que nos lleva hasta él.'],
+['📸 Recuerdo','Aquí puedes colocar una foto especial y contar por qué es importante para ti.'],
+['✍️ Tu día','ESCRIBE AQUÍ TU MENSAJE PERSONAL.'],
+['💌 Mensaje','A veces la distancia pesa, pero también hace que cada reencuentro tenga un valor que jamás olvidaríamos.'],
+['❓ Pregunta','¿Qué apodo mío te gusta más y cuál inventarías para nuestro próximo viaje juntos?'],
+['🥰 Algo que amo de ti','Amo saber que, aunque nuestras rutinas sean diferentes, existe un “nosotros” que sigue teniendo un lugar especial.'],
+['✈️ Pista','La fecha se acerca. Empieza a imaginar ese momento: verte llegar, acercarme y por fin poder abrazarte.'],
+['🎁 Sorpresa','Hoy escribe mentalmente una frase que quieras escuchar de mí el día que nos veamos.'],
+['✍️ Tu día','ESCRIBE AQUÍ TU MENSAJE PERSONAL.'],
+['💖 Nosotros','Gracias por cada conversación, cada espera, cada “te amo” y cada esfuerzo para que la distancia no nos gane.'],
+['❓ Pregunta','Si nuestra historia tuviera un título, ¿cómo se llamaría?'],
+['🎵 Canción','Hoy vuelve a escuchar una canción que te recuerde a mí. ❤️'],
+['📸 Recuerdo','Elige el recuerdo que más te haga sonreír y escríbeme por qué.'],
+['💌 Mensaje','No sé qué nos traerán los próximos meses, pero sí sé que hoy me hace feliz tenerte en mi vida.'],
+['✍️ Tu día','ESCRIBE AQUÍ TU MENSAJE PERSONAL.'],
+['🥰 Algo que amo de ti','Me gusta que contigo puedo ser amoroso, divertido, serio o simplemente yo.'],
+['✈️ Pista','El reencuentro ya no parece tan lejano. ❤️'],
+['❓ Pregunta','¿Qué comida te gustaría que compartiéramos cuando nos veamos?'],
+['🎁 Sorpresa','Hoy prepara mentalmente tres cosas: un abrazo, un beso y una frase para ese primer minuto juntos.'],
+['💖 Nosotros','La espera también está construyendo recuerdos. Cada día de esta cuenta es una pequeña prueba de cuánto deseo verte.'],
+['🎵 Canción','Puedes cambiar este día por una canción que sea “de ustedes”.'],
+['✍️ Tu día','ESCRIBE AQUÍ TU MENSAJE PERSONAL.'],
+['📸 Recuerdo','Pon aquí una de tus fotos favoritas y escribe debajo: “Quiero volver a vivir esto contigo”.'],
+['💌 Mensaje','Si pudiera acelerar el tiempo, lo haría. Pero mientras llega el día, seguiré eligiéndote.'],
+['❓ Pregunta','¿Qué detalle pequeño te gustaría recibir de mí cuando nos encontremos?'],
+['🥰 Algo que amo de ti','Amo las pequeñas cosas: tus palabras, tu forma de hablarme y esos momentos en los que siento que estamos cerquita aunque estemos lejos.'],
+['✈️ Pista','Cada vez falta menos para que esta pantalla deje de ser nuestra forma principal de vernos.'],
+['✍️ Tu día','ESCRIBE AQUÍ TU MENSAJE PERSONAL.'],
+['🎁 Sorpresa','Hoy imagina nuestra primera foto juntos después de volver a vernos. ¿Dónde será?'],
+['💖 Nosotros','Quiero que cuando pensemos en estos días recordemos que la distancia no fue el final de nada; fue una etapa que aprendimos a atravesar juntos.'],
+['🎵 Canción','Elige una canción para nuestro reencuentro. Esta vez debe hacerte sonreír.'],
+['❓ Pregunta','¿Qué es lo que más extrañas de estar conmigo?'],
+['✍️ Tu día','ESCRIBE AQUÍ TU MENSAJE PERSONAL.'],
+['💌 Mensaje','Ya estamos entrando en la recta final. Te he extrañado, sí, pero también he disfrutado saber que hay alguien a quien espero con tantas ganas.'],
+['📸 Recuerdo','Busca una foto que te haga pensar: “qué ganas de volver a estar así”.'],
+['🥰 Algo que amo de ti','Amo que hayas dejado recuerdos tuyos en tantos lugares de mi mente.'],
+['✈️ Pista','La próxima vez que veas este mensaje, estaremos todavía más cerca. ❤️'],
+['💖 Nosotros','No quiero que nuestro reencuentro sea el final de la cuenta regresiva; quiero que sea el comienzo de nuevos recuerdos.'],
+['✍️ Tu día','ESCRIBE AQUÍ TU MENSAJE PERSONAL.'],
+['❓ Pregunta','¿Qué quieres que hagamos durante nuestra primera hora juntos?'],
+['🎁 Sorpresa','Hoy escribe una pequeña promesa para nuestro reencuentro: algo bonito que quieras hacer por mí.'],
+['💌 Mensaje','Casi puedo imaginar tu cara al abrir esta página. Sonríe, porque ya falta muy poquito. ❤️'],
+['✈️ Cuenta regresiva','Estamos muy cerca. Guarda energía para ese abrazo.'],
+['✍️ Tu día','ESCRIBE AQUÍ TU MENSAJE PERSONAL.'],
+['🥰 Algo que amo de ti','Si pudiera elegir un lugar donde estar ahora mismo, probablemente elegiría estar a tu lado.'],
+['💖 Nosotros','Gracias por quedarte, por intentarlo y por formar parte de mi vida.'],
+['✍️ Tu día','ESCRIBE AQUÍ TU MENSAJE PERSONAL.'],
+['📸 Recuerdo','Últimos recuerdos antes del reencuentro. Elige una foto que quieras llevar contigo emocionalmente a ese día.'],
+['✍️ Tu día','ESCRIBE AQUÍ TU MENSAJE PERSONAL.'],
+['✈️ Mañana','Mañana ya no habrá que imaginar tanto. El momento está aquí. ❤️'],
+['✍️ Tu día','ESCRIBE AQUÍ TU MENSAJE PERSONAL.'],
+['❤️ HOY','HOY POR FIN. Después de tantos días de espera, ya no tienes que contar. Hoy vuelvo a verte. Hoy podemos cambiar la pantalla por un abrazo. Te amo. ❤️✈️']
+];
+function dayNumber(){const now=new Date();if(now<start)return 0;if(now>end)return 78;return Math.floor((now-start)/86400000)+1}
+function render(){let d=dayNumber();if(d<1)d=1;if(d>78)d=78;const c=content[d-1]||content[77];document.getElementById('tag').textContent=c[0];document.getElementById('title').textContent='Día '+d;document.getElementById('message').textContent=c[1];document.getElementById('photo').style.display='none';
+const grid=document.getElementById('daysGrid');grid.innerHTML='';for(let i=1;i<=78;i++){const b=document.createElement('button');b.className='day'+(i<=d?' open':'')+(i===d?' today':'');b.textContent=i;b.disabled=i>d;b.title=i>d?'Se desbloquea el '+new Date(start.getTime()+(i-1)*86400000).toLocaleDateString('es-MX',{day:'numeric',month:'long'}):'Abrir día '+i;b.onclick=()=>showDay(i);grid.appendChild(b)}
+if(d===78){document.querySelector('.hero h1').textContent='HOY POR FIN ❤️';document.querySelector('.hero p').innerHTML='Después de tantos días de espera… hoy volvemos a vernos.'}}
+function showDay(i){if(i>dayNumber())return;const c=content[i-1]||content[77];document.getElementById('tag').textContent=c[0];document.getElementById('title').textContent='Día '+i;document.getElementById('message').textContent=c[1];document.querySelector('.today').scrollIntoView({behavior:'smooth',block:'start'})}
+function clock(){const now=new Date();let diff=end-now;if(diff<0)diff=0;const dd=Math.floor(diff/86400000),hh=Math.floor(diff%86400000/3600000),mm=Math.floor(diff%3600000/60000),ss=Math.floor(diff%60000/1000);document.getElementById('days').textContent=dd;document.getElementById('hours').textContent=String(hh).padStart(2,'0');document.getElementById('mins').textContent=String(mm).padStart(2,'0');document.getElementById('secs').textContent=String(ss).padStart(2,'0')}
+render();clock();setInterval(clock,1000);
+</script></body></html>
