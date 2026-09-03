@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>77 días para volver a verte ❤️</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:linear-gradient(145deg,#fff5f7,#f7f1ff);color:#342735;min-height:100vh}.wrap{max-width:720px;margin:auto;padding:28px 18px 60px}.hero{text-align:center;padding:28px 12px}.heart{font-size:42px}.eyebrow{letter-spacing:2px;text-transform:uppercase;font-size:12px;color:#a15a7b}.hero h1{font-size:clamp(32px,8vw,56px);line-height:1.02;margin:10px 0}.hero p{font-size:17px;color:#6c5b67}.count{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:22px 0}.unit{background:#fff;border-radius:18px;padding:13px 17px;min-width:78px;box-shadow:0 8px 25px #4a264012}.num{display:block;font-size:28px;font-weight:800}.lab{font-size:11px;text-transform:uppercase;color:#887681}.card{background:#fff;border-radius:25px;padding:24px;box-shadow:0 12px 35px #4a264015;margin-top:18px}.today{border:1px solid #f0d6df}.tag{display:inline-block;border-radius:999px;padding:7px 11px;background:#fff0f4;color:#a34268;font-size:12px;font-weight:700}.card h2{margin:14px 0 8px}.msg{font-size:18px;line-height:1.65;white-space:pre-line}.locked{opacity:.7}.days{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:16px}.day{border:0;border-radius:13px;padding:10px 4px;background:#f4eef3;color:#594a56;font-weight:700;cursor:pointer}.day.open{background:#fff0f4}.day.today{outline:2px solid #c66b91}.day:disabled{cursor:not-allowed}.footer{text-align:center;color:#8a7984;font-size:12px;margin-top:25px}.photo{width:100%;border-radius:18px;margin-top:14px;display:none}button:focus{outline:3px solid #e4a5bd;outline-offset:2px}@media(max-width:450px){.days{grid-template-columns:repeat(5,1fr)}.card{padding:20px}.msg{font-size:17px}}
+
+.spotify-btn{display:inline-block;margin-top:14px;padding:11px 17px;border-radius:999px;background:#1db954;color:white;text-decoration:none;font-weight:800}
+</style>
+</head>
+<body><main class="wrap">
+<section class="hero"><div class="heart">❤️</div><div class="eyebrow">PARA EL AMOR DE MI VIDA (GLADYS ❤️)</div><h1>Cada día más cerca de ti</h1><p>77 días de mensajes · del 2 de septiembre al 17 de noviembre de 2026.<br>Un pequeño pedacito de mí para cada día que nos separa.</p><div class="count"><div class="unit"><span class="num" id="days">78</span><span class="lab">días</span></div><div class="unit"><span class="num" id="hours">00</span><span class="lab">horas</span></div><div class="unit"><span class="num" id="mins">00</span><span class="lab">minutos</span></div><div class="unit"><span class="num" id="secs">00</span><span class="lab">segundos</span></div></div></section>
+<section class="card today"><span class="tag" id="tag">💌 Mensaje de hoy</span><h2 id="title">Día 1 — Comenzamos</h2><div class="msg" id="message"></div><img id="photo" class="photo" alt="Foto especial"></section>
+<section class="card"><span class="tag">📅 Nuestra cuenta regresiva</span><div class="days" id="daysGrid"></div></section>
+<div class="footer">Hecho con amor, pensando en ti. ❤️<br>La sorpresa de cada día se desbloquea automáticamente.</div>
+</main>
+<script>
+const start=new Date('2026-09-02T00:00:00-06:00');
+const reunion=new Date('2026-11-18T00:00:00-06:00');
+const content=[["💌 Mensaje de hoy", "Comenzamos esta cuenta regresiva. No importa cuántos kilómetros haya entre nosotros: cada día que pasa nos acerca un poquito más a ese abrazo que tanto quiero darte. ❤️"], ["❓ Pregunta", "Si pudieras teletransportarte conmigo durante solamente una hora esta noche… ¿a dónde iríamos y qué haríamos? ❤️"], ["🥰 Para ti", "Hay días en los que te extraño más de lo normal. Pero entonces recuerdo algo: tener a alguien a quien extrañar así también significa tener a alguien que vale muchísimo la pena esperar. Y para mí, esa persona eres tú. ❤️"], ["🎵 Canción", "Hoy no quiero decirte demasiado… prefiero dejar que esta canción hable un poquito por mí. Escúchala pensando en nosotros. ❤️
+
+🎵 Antes Que al Mío — Los Claxons
+SPOTIFY1"], ["😏 Para ti", "Tengo una queja contigo… últimamente apareces demasiado en mis pensamientos. Y lo peor es que no tengo ninguna intención de hacer que te vayas. 😏❤️"], ["🎮 Mini juego", "Hoy tienes una misión: dime 3 cosas que quieres que hagamos cuando volvamos a estar juntos. Yo también prepararé mis tres. 😏❤️"], ["❤️ Mensaje personal", "Hoy este mensaje no lo escribió una página… lo escribió alguien que te ama.
+
+Hoy recordé lo nervioso que estaba por verte por primera vez, pero al verte ahí parada con ese atuendo tan provocativo para mí, ese sentimiento cambió por una adrenalina que me hacía correr a tus brazos. ❤️"], ["🥰 Completa la frase", "Hay algo que quiero saber de ti…
+
+Cuando finalmente vuelva a verte, lo primero que quiero hacer contigo es ________. ❤️"], ["💌 Un recordatorio para hoy", "Entre todo lo que tengas que hacer hoy, quiero robarte unos segundos para recordarte algo: hay alguien a kilómetros de distancia pensando en ti, eligiéndote y contando los días para volver a verte. ❤️"], ["🎮 Reto de pareja", "Tienes una misión 😏
+
+Envíame una foto de algo que estés viendo en este momento. Yo haré lo mismo. Sin explicaciones. Después tenemos que adivinar dónde estaba cada uno."], ["☕ Mensaje personal", "Un recuerdo que quiero repetir siempre ❤️
+
+Mi amor, ¿recuerdas nuestras pláticas tomando cafecito con proteína en el desayunador? Me encantaría tenerlas por siempre.
+
+hoy te mano un besote no´ mas, porque ? ❤️"], ["😏 Pregunta peligrosa", "Si esta noche apareciera mágicamente en tu puerta y tuviéramos toda la noche para nosotros… ¿qué sería lo primero que harías conmigo? 😏❤️"], ["🎵 Una canción para nosotros", "Hoy quiero que escuches esta canción pensando en nosotros. Hay canciones que simplemente escuchas… y otras que inevitablemente te llevan a una persona. ❤️
+
+🎵 Buscándote (Cap. 7) — Siddhartha
+SPOTIFY2"], ["❤️🎉 10 MESES JUNTOS 🎉❤️", "❤️ 15 DE SEPTIEMBRE — 10 MESES JUNTOS
+
+Hoy no solamente falta un día menos para volver a verte… hoy cumplimos 10 meses. ❤️
+
+10 meses desde que comenzó esta historia que, aun con kilómetros de por medio, seguimos construyendo juntos.
+
+Hemos tenido risas, llamadas, momentos increíbles, días en los que nos extrañamos muchísimo y otros en los que una simple llamada hace que la distancia se sienta un poquito más pequeña.
+
+Y si algo tengo claro después de estos 10 meses es que te sigo eligiendo chaparrita.
+
+Gracias por estos 10 meses, mi amor. ❤️
+
+Y ahora solo quiero seguir descontando días hasta poder celebrar todo esto como realmente quiero…
+
+teniéndote entre mis brazos.
+
+Felices 10 meses, amor de mi vida. ❤️"], ["😂 Reto rápido", "Tienes 30 segundos para mandarme el emoji que mejor describa nuestra relación. Pero solo puedes escoger UNO. Después te digo cuál escogí yo. 😏"], ["❤️ Por si hoy nadie te lo ha dicho…", "Espero que nunca dudes de lo especial que eres para mí. Incluso desde lejos tienes esa capacidad de aparecer en mi día sin estar físicamente aquí. ❤️"], ["✈️ Exactamente 2 meses…", "Hoy faltan exactamente 2 meses para volver a verte. ❤️ Hace unos días contábamos meses y pronto empezaremos a contar semanas… y después días. ✈️"], ["❓ Quiero conocerte todavía más", "¿Qué cosa pequeña que hago te hace sentir querida y quizá nunca me has dicho? ❤️"], ["😏 Confesión del día", "A veces imagino el momento en que vuelva a tenerte enfrente… y sinceramente no sé qué voy a querer primero: abrazarte, besarte o simplemente quedarme mirándote pensando “por fin”. 😏❤️"], ["🎮 ¿Qué tanto me conoces?", "Sin preguntarme nada: dime cuál crees que será 1. lo primero que voy a decirte, 2. lo primero que voy a hacer y 3. lo primero que voy a querer comer contigo cuando nos veamos. 😂❤️"], ["🌳❤️ Hoy vamos a recordar…", "Hoy vamos a recordar el día que me llevaste al parque. Fue un día que disfruté mucho de ti, porque ese día pasó de todo, mi amor: risas, besos, pláticas profundas y quizá otras sin sentido jajaja, más cuando mirábamos la represa.
+
+Me encantan esos momentos contigo, donde simplemente somos tú y yo.
+
+¿Me prometes que tendremos más días así? ❤️
+
+Bonito día, mi amor.
+
+Te amo, guapa. ❤️"], ["💭 Cierra los ojos un momento…", "Imagina que mañana despertamos juntos y tenemos todo el día libre. Sin trabajo, sin pendientes y sin distancia. ¿Cómo sería nuestro día desde que despertamos hasta que nos dormimos? ❤️"], ["📸 Quiero verte como yo te veo ❤️", "Busca una foto tuya que te guste mucho y mándamela. Después yo voy a escoger una foto tuya que me encanta y te diré qué veo yo cuando la miro."], ["😂 Solo respuestas incorrectas", "¿Dónde nos conocimos? ¿Cuál fue nuestra primera cita? ¿Qué fue lo primero que pensé cuando te vi? ¿Quién está más enamorado? 😂 Solo se permiten respuestas incorrectas."], ["🥰 Por si hoy me extrañas…", "No puedo acortar los kilómetros que hay entre nosotros hoy, pero sí puedo recordarte que cada día estamos más cerca de volver a compartir esas cosas pequeñas que tanto extraño de nosotros. Ya falta menos, chaparrita. ❤️"], ["🔥 Elige cuidadosamente 😏", "Cuando nos volvamos a ver tienes derecho a escoger solamente uno primero: A) abrazo de esos que no terminan, B) beso que llevamos meses guardando o C) tú propones una tercera opción. 😏❤️"], ["🎁 Acabas de desbloquear un premio 🎟️", "Este mensaje vale por una cita organizada completamente por mí cuando estemos juntos. Tú solamente tendrás que decirme qué día quieres cobrarlo. ❤️"], ["🌧️❤️ Un día de recuerdo más…", "Algo divertido que nos pasó fue cuando pediste comida, amor, y fuimos a buscarla bajo la lluvia.
+
+Terminamos mojados, con frío y sin comida jajaja. 😂❤️
+
+¿Sabes qué nos faltó? Nuestro beso bajo la lluvia. 🌧️💋
+
+Pero ahora tenemos un plan más pendiente para cuando estemos juntos.
+
+Te amo, besitos… ❤️"], ["❤️ Hoy tú decides…", "Si pudiéramos repetir solamente una cosa de la última vez que estuvimos juntos, ¿qué escogerías?
+
+A) una conversación
+B) un beso
+C) una salida
+D) un momento que solamente tú y yo sabemos. ❤️"], ["😏 Necesito una respuesta sincera…", "¿Cuál es el momento en el que me has visto y has pensado: “qué guapo se ve este hombre”? 😂❤️
+
+No se vale decir “siempre”."], ["🎧 Ponle soundtrack a nuestro reencuentro", "Si tuvieras que escoger una canción para que estuviera sonando justo cuando volvamos a vernos, ¿cuál sería? ❤️"], ["💌 Por si hoy fue un día pesado…", "No todos los días tienen que ser increíbles, mi amor. Si hoy fue uno de esos días cansados, solamente quiero dejarte un poquito de amor por aquí y recordarte que estoy contigo, incluso desde lejos. ❤️"], ["🎮 Adivina mi respuesta", "¿Qué extraño más de ti?
+
+A) tus besos
+B) escucharte cerquita
+C) abrazarte
+D) molestarte en persona 😂
+E) todas las anteriores
+
+Piensa bien tu respuesta… 😏"], ["🎟️ Premio desbloqueado #2", "Este cupón vale por un beso bajo la lluvia 🌧️💋.
+
+Sí, el que nos quedó pendiente.
+
+No importa cuándo ni dónde… pero algún día tienes derecho a cobrarlo. ❤️"], ["❤️ Hoy no hay recuerdo…", "Cuando escribí esto, solo pensaba en nuestro futuro y quería decirte que no puedo prometerte que todo será perfecto, pero sí que será para toda la vida.
+
+También sé que no siempre serán momentos perfectos, que habrá miles de dificultades, pero sé que haremos todo lo posible por hacer nuestros sueños realidad.
+
+Prometo que habrá días maravillosos y batallas muy duras, pero que, pase lo que pase, siempre tendrás mi mano para afrontar todo lo que se nos venga.
+
+Te amo. ❤️"], ["🧠 A ver si realmente me conoces 😏", "Si hoy estuviera teniendo un día horrible, ¿qué crees que funcionaría mejor conmigo?
+
+A) dejarme tranquilo un rato
+B) abrazarme
+C) hacerme reír
+D) darme comida 😂
+E) otra cosa que tú ya sabes. ❤️"], ["💌 Por si hoy no te lo he dicho…", "Entre trabajo, pendientes y todo lo que pasa durante el día, a veces se nos puede olvidar decir las cosas más simples.
+
+Así que aquí está la mía de hoy: me haces feliz, chaparrita. ❤️"], ["😏 Pregunta con consecuencias…", "Cuando vuelva a verte, ¿cuántos besos crees que me debes por todo este tiempo separados? 😏
+
+Piensa bien tu respuesta porque pienso cobrarlos todos. 💋❤️"], ["💭 Una pregunta para nuestro futuro…", "Imagínanos dentro de 5 años. Es sábado, no tenemos ningún pendiente y despertamos juntos.
+
+¿Dónde estamos y cómo sería nuestro día? ❤️"], ["🎮 3, 2, 1… responde", "Sin pensarlo demasiado, mándame:
+
+• una palabra que me describa
+• un recuerdo nuestro
+• algo que todavía quieras vivir conmigo
+
+Yo haré exactamente lo mismo. ❤️"], ["🎟️ Vale por una noche sin reloj 🌙", "Este cupón vale por una noche juntos donde no haya prisas ni pendientes.
+
+Nosotros decidimos qué hacemos: cenar, salir, platicar hasta tarde, ver una película… o simplemente quedarnos juntos. ❤️"], ["❤️ El día que decidí volver a escribirte…", "Recuerdo mucho el día que te volví a escribir. Una noche antes había soñado contigo y desperté con una sensación de vacío… pero no un vacío de tristeza, sino ese vacío de sentir que algo me faltaba en mi vida.
+
+Ese día escribía y borraba. Lo hice muchas veces.
+
+Y por la noche, justo antes de enviarte ese “HOLA”, me dije:
+
+“Envíalo, pero sabiendo que puede o no responder. Si pasa un día y no lo hace, dala por perdida… pero si responde, demuéstrale que es el amor de tu vida.”
+
+Y respondiste. ❤️
+
+Y desde entonces he intentado cumplir aquella promesa que me hice antes de volver a entrar en tu vida.
+
+Te amo, chaparrita. ❤️"], ["💭 Quiero saber algo…", "De todas las cosas que hemos vivido juntos, ¿hay algún momento aparentemente pequeño que para ti haya significado muchísimo?
+
+Quiero saber cuál y por qué. ❤️"], ["❤️🎉 11 MESES JUNTOS 🎉❤️", "Hoy cumplimos otro mes de esta historia. Y esta vez se siente diferente, porque nuestro próximo abrazo ya no parece tan lejano.
+
+11 meses eligiéndonos, conociéndonos y construyendo esto a nuestra manera.
+
+Feliz 11 meses, chaparrita. ❤️
+
+Y ahora sí… comienza nuestro último mes antes de volver a estar juntos. ✈️"], ["😂 Vamos a comprobar algo…", "Mándame 3 cosas sobre nosotros: 2 verdaderas y 1 falsa.
+
+Yo tengo que descubrir cuál es la mentira. Después me toca a mí. 😏❤️"], ["💌 Por si alguna vez te lo preguntas…", "No necesito que nuestra historia sea perfecta. Prefiero que sea nuestra: con nuestras risas, diferencias, locuras, aprendizajes y todos esos momentos que todavía nos faltan por vivir.
+
+Te elegiría así, tal como somos. ❤️"], ["✈️❤️ FALTA EXACTAMENTE 1 MES", "¿Te das cuenta, amor? Un mes.
+
+Después de tantos días contando cuánto faltaba, hoy ya podemos decirlo así.
+
+Dentro de exactamente un mes espero estar mirándote y pensando: “valió la pena cada día de espera”. ❤️✈️"], ["😏 Tenemos un pequeño problema…", "Llevo meses acumulando abrazos, besos y ganas de verte. 😏
+
+Así que necesito saber algo importante: ¿estás preparada para recibir todo eso cuando llegue o debería administrarlo poco a poco? 😂❤️"], ["🎵 Esta canción ahora significa algo diferente…", "Esta canción la había escuchado muchas veces. Es una de mis favoritas, pero ahora que estás en mi vida, cuando la escucho me hace llorar.
+
+Sí… lloro de felicidad. Por mí, por nosotros y por todo lo que estamos construyendo. 💙
+
+Gracias por todo el amor que me das todos los días.
+
+Te amo. ❤️
+
+🎧 Abrázame Muy Fuerte — Juan Gabriel
+SPOTIFY3"], ["🥰 Una de mis partes favoritas de nosotros…", "Me gusta que, aun estando lejos, seguimos encontrando formas de formar parte del día del otro. A veces es una llamada, una tontería, una foto o simplemente un “te amo”.
+
+Son cosas pequeñas, pero contigo significan muchísimo para mí. ❤️"], ["😏 Hoy quiero ponerte nerviosa…", "Tienes que decirme una cosa que quieras hacer conmigo cuando nos veamos y que todavía no me hayas dicho. 😏
+
+Yo prometo contestarte con la mía. ❤️"], ["💭 Quiero guardar tu respuesta…", "Si dentro de muchos años pudiéramos mirar hacia atrás y recordar esta etapa de nuestra relación a distancia, ¿qué te gustaría poder decir que aprendimos de ella? ❤️"], ["😂 Completa las frases", "Carlos me hace reír cuando ____.
+
+Lo que más extraño de él es ____.
+
+Algo que tenemos que hacer juntos es ____.
+
+Cuando vuelva a verlo voy a ____. 😏❤️"], ["❤️ Cada vez falta menos…", "No quiero que estos días pasen rápido solamente por querer verte. También quiero disfrutarlos, porque algún día recordaremos esta etapa y diremos: “¿te acuerdas cuando contábamos los días para volver a estar juntos?” ❤️"], ["🎟️ Vale por un SÍ ❤️", "Puedes guardar este cupón. Cuando estemos juntos podrás usarlo para proponerme un plan que quieras hacer conmigo, y mi primera respuesta tendrá que ser:
+
+SÍ. 😏❤️"], ["📖 Quiero que esta frase sea nuestra…", "Sabes que en mis ratos libres me gusta leer, pero de todo lo que he leído hay una frase que me encanta.
+
+Y hoy quiero compartirla contigo porque quiero que sea esa frase que tengamos los dos:
+
+“Para serte sincero, solo en dos lugares me he sentido lo bastante cómodo para ser desvergonzadamente yo mismo:
+en mi soledad… y contigo.”
+
+Y creo que eso dice muchísimo de lo que significas para mí. ❤️"], ["✈️ ¿Te estás dando cuenta? ❤️", "Cada vez que abras esta página, el número de días va a parecer más pequeño. Y yo voy a estar cada vez más impaciente por verte.
+
+Ya no estamos hablando de meses, amor… estamos hablando de semanas. ❤️"], ["😏 Necesito información importante…", "Cuando finalmente me tengas enfrente, ¿crees que vas a:
+
+A) correr a abrazarme
+B) besarme primero
+C) quedarte mirándome unos segundos
+D) hacerte la difícil y esperar a que yo vaya por ti? 😂❤️"], ["💌 Hoy solamente quiero recordarte algo…", "No tienes que hacer nada extraordinario para que yo te quiera. Me enamoran también esas partes tuyas de todos los días: tu forma de hablar, de reír, de contarme cosas y simplemente de ser tú. ❤️"], ["🎃 Truco o trato, chaparrita 🎃❤️", "Hoy tienes dos opciones:
+
+TRUCO: me mandas una foto haciendo tu cara más terrorífica 😂.
+
+TRATO: me dices algo que tengas muchas ganas de hacer conmigo cuando nos veamos. 😏❤️"], ["💭 Guarda esta pregunta…", "De todos los sueños que tenemos pendientes, ¿cuál te haría más ilusión que pudiéramos decir algún día: “¿te acuerdas cuando solamente hablábamos de esto y ahora lo estamos viviendo?” ❤️"], ["💀🌼 Hoy pensé en los recuerdos…", "Hay personas, lugares y momentos que se quedan viviendo dentro de nosotros. Y me gusta pensar que nosotros también estamos construyendo recuerdos que algún día vamos a mirar con una sonrisa y decir: “qué bonito fue vivir todo eso juntos”. ❤️"], ["🚗🎵 Tengo un plan para nosotros…", "Cuando vayamos en tu auto camino a casa, quiero que pongas esta canción.
+
+Quiero ir a tu lado, escucharla contigo y que la cantemos juntos. ❤️
+
+No sé por qué, pero desde ahora ya puedo imaginar ese momento…
+
+Tú, yo, el camino y esta canción.
+
+Y cuando llegue ese día, probablemente voy a recordar que alguna vez escribí esto mientras todavía estaba contando los días para volver a verte. ❤️
+
+🎧 Ropa De Bazar — Ed Maverick, Bratty
+SPOTIFY4"], ["❤️ Cada vez puedo imaginarlo más…", "Ya no siento nuestro reencuentro como algo lejano. Cada día puedo imaginar un poquito más ese momento en que vuelva a verte, escuche tu voz sin un teléfono de por medio y pueda decirte: “ya estoy aquí, amor”. ❤️"], ["😏 Vamos a resolver esto de una vez…", "Después de tantos meses separados, ¿cuánto crees que debería durar nuestro primer abrazo?
+
+A) 10 segundos
+B) 1 minuto
+C) hasta que alguno diga “ya suéltame” 😂
+D) no pienso soltarte. ❤️"], ["📸 Busca algo nuestro ❤️", "Ve a tus fotos y busca una foto de nosotros que no sea de tus favoritas normalmente, pero que al verla te traiga un recuerdo bonito.
+
+Mándamela y cuéntame qué recuerdas de ese momento. Yo haré lo mismo. 📸"], ["💌 Quiero que sepas algo…", "La distancia me ha enseñado que extrañar a alguien también puede ser una forma de darte cuenta de cuánto significa para ti.
+
+Y después de todo este tiempo, sigo teniendo las mismas ganas de compartir mi vida contigo. ❤️"], ["😂 Seamos sinceros…", "Cuando llevemos unas horas juntos después de tantos meses separados, ¿quién crees que va a decir primero: “¿ves por qué te extrañaba tanto?”? 😂❤️"], ["🎟️ Vale por un día completamente tuyo ❤️", "Tú eliges qué hacemos, dónde comemos y a dónde vamos.
+
+Ese día yo solamente tengo una condición: pasarlo contigo. ❤️"], ["❤️ Lo volvería a elegir…", "Amor, estar lejos de ti no ha sido fácil.
+
+Hubo días en los que te extrañé muchísimo, días en los que hubiera cambiado cualquier llamada o mensaje simplemente por poder tenerte unos minutos frente a mí.
+
+Pero también entendí algo durante todo este tiempo: la distancia no solamente puso a prueba lo nuestro, también me enseñó cuánto quiero que esto funcione.
+
+Aprendí que amar a alguien también es tener paciencia, confiar, aprender a entendernos y seguir eligiéndonos incluso en esos días donde las cosas no son perfectas.
+
+No sé qué dificultades nos esperan más adelante. Seguramente tendremos muchas, porque ninguna historia es perfecta.
+
+Pero después de todo este tiempo hay algo que sí puedo decirte:
+
+si tuviera que regresar al principio sabiendo que tendría que pasar nuevamente por todos estos meses lejos de ti para llegar hasta aquí… lo volvería a hacer.
+
+Porque al final de esa espera estás tú. ❤️
+
+Y ahora mira dónde estamos, chaparrita…
+
+ya casi puedo volver a abrazarte.
+
+Te amo. ❤️✈️"], ["❤️ Faltan 7 días", "Una semana, amor…
+
+Después de tantos meses, llamadas, mensajes y tantos “te extraño”, hoy finalmente podemos decir que solo falta una semana.
+
+Dentro de siete días ya no voy a estar imaginando cómo será volver a verte… voy a estar viviéndolo contigo. ❤️"], ["💭 Antes de volver a verte…", "Quiero preguntarte algo y guardar tu respuesta:
+
+¿qué fue lo más bonito que vivimos durante estos meses a distancia?
+
+Cuando estemos juntos te diré cuál fue para mí. ❤️"], ["💋 Te debo algo…", "He perdido la cuenta de todos los besos que te he mandado por mensajes, llamadas y audios durante estos meses.
+
+Pero tengo una mala noticia para ti… ninguno cuenta. 😏❤️
+
+Así que pienso empezar a pagarte todos en persona muy pronto."], ["❤️ Mañana cumplimos 1 año…", "Hace casi un año comenzó oficialmente nuestra historia. Y pensar que mañana cumpliremos nuestro primer año juntos justo cuando estamos a días de volver a vernos… creo que no podría imaginar una forma más bonita de llegar hasta aquí. ❤️"], ["🎉❤️ NUESTRO PRIMER AÑO ❤️🎉", "❤️🎉 15 DE NOVIEMBRE — NUESTRO PRIMER AÑO 🎉❤️
+
+Hace un año no sabía todo lo que iba a vivir contigo.
+
+No sabía cuántas veces me harías reír, cuánto iba a extrañarte, todas las conversaciones que tendríamos, los momentos que guardaríamos ni todo lo que íbamos a aprender juntos.
+
+Solo sabía que había una mujer que había llegado a mi vida y que yo quería descubrir hasta dónde podía llegar esta historia.
+
+Y míranos ahora, amor…
+
+Un año. ❤️
+
+Un año de nosotros.
+De momentos maravillosos y otros no tan fáciles.
+De risas, besos, llamadas, diferencias, aprendizajes, planes, sueños y muchos kilómetros de por medio.
+
+No tuvimos un año perfecto, pero tampoco quiero una historia perfecta.
+
+Quiero nuestra historia.
+
+La que estamos construyendo tú y yo, con todo lo que somos.
+
+Y si después de este primer año me preguntaras qué quiero para el siguiente, mi respuesta sería sencilla:
+
+Quiero seguir construyendo una vida contigo.
+
+Quiero más viajes, más cafecitos, más conversaciones sin sentido, más días de lluvia, más canciones en el auto, más besos, más abrazos y muchos recuerdos que todavía no existen. ❤️
+
+Gracias por haber respondido aquel “HOLA” que algún día tuve tanto miedo de enviarte.
+
+Porque sin saberlo, esa pequeña palabra terminó cambiando muchísimas cosas en mi vida.
+
+Feliz primer aniversario, amor de mi vida. ❤️
+
+Y hay algo que hace este día todavía más especial…
+
+Después de un año de nuestra historia y de tantos días contando cuánto faltaba…
+
+ya solamente faltan 3 días para volver a verte. ✈️❤️
+
+Te sigo eligiendo, chaparrita.
+
+Hoy, después de nuestro primer año, y para todos los que todavía nos faltan. ❤️"], ["🥹 Faltan solamente 2 días…", "Ya no quiero imaginar demasiado cómo será. Quiero dejar que suceda.
+
+Solo sé que cuando te tenga frente a mí voy a recordar todos estos meses, toda esta cuenta regresiva y cada vez que dijimos “ya falta menos”.
+
+Y por fin podremos decir: “ya estamos juntos”. ❤️"], ["❤️ Mañana…", "Y llegamos hasta aquí, amor.
+
+Durante 77 días abriste esta página y encontraste un pedacito de mí: recuerdos, canciones, preguntas, tonterías, planes, promesas y muchas ganas de volver a verte.
+
+Cuando hice todo esto parecía que faltaba muchísimo.
+
+Y ahora solamente puedo escribir una palabra:
+
+Mañana. ❤️
+
+Mañana ya no tendré que imaginar nuestro abrazo.
+Mañana ya no habrá kilómetros contando los días.
+Mañana podré mirarte a los ojos y decirte todo eso que ninguna pantalla puede decir por mí.
+
+Gracias por acompañarme en esta cuenta regresiva, chaparrita.
+
+Esta noche duerme bonito…
+
+porque mañana voy por ti. ❤️✈️
+
+Te amo."]];
+const spotifyLinks={
+  SPOTIFY1:'https://open.spotify.com/intl-es/track/1ofm4yM1aSQLvLNTfaAAQR?si=44e154116e0b458d',
+  SPOTIFY2:'https://open.spotify.com/intl-es/track/59K9Q2O1zSYH5y7429Vac1?si=cb5c073cbbbf45da',
+  SPOTIFY3:'https://open.spotify.com/intl-es/track/2nejvFyJeTDtMRP2nUMt0J?si=f511279e9af54abe',
+  SPOTIFY4:'https://open.spotify.com/intl-es/track/7kWFRZdedr2gtfE8JDumVZ?si=e8d0e4e6256d457f'
+};
+function dayNumber(){
+  const now=new Date();
+  if(now<start)return 0;
+  if(now>=reunion)return 77;
+  return Math.min(77,Math.floor((now-start)/86400000)+1);
+}
+function setMessage(i){
+  const c=content[i-1];
+  document.getElementById('tag').textContent=c[0];
+  document.getElementById('title').textContent='Día '+i;
+  const box=document.getElementById('message');
+  let msg=c[1], marker=null;
+  Object.keys(spotifyLinks).forEach(k=>{if(msg.includes(k)){marker=k;msg=msg.replace(k,'').trim();}});
+  box.textContent=msg;
+  const old=document.getElementById('spotifyBtn'); if(old)old.remove();
+  if(marker){
+    const a=document.createElement('a');
+    a.id='spotifyBtn'; a.className='spotify-btn'; a.href=spotifyLinks[marker];
+    a.target='_blank'; a.rel='noopener'; a.textContent='🎧 Escuchar en Spotify';
+    box.insertAdjacentElement('afterend',a);
+  }
+  const photo=document.getElementById('photo'); if(photo)photo.style.display='none';
+}
+function render(){
+  const now=new Date();
+  if(now>=reunion){const f=document.getElementById('finalDay');if(f)f.style.display='flex';return;}
+  let d=dayNumber(); if(d<1)d=1;
+  setMessage(d);
+  const grid=document.getElementById('daysGrid');grid.innerHTML='';
+  for(let i=1;i<=77;i++){
+    const b=document.createElement('button');
+    b.className='day'+(i<=d?' open':'')+(i===d?' today':'');
+    b.textContent=i;b.disabled=i>d;
+    b.title=i>d?'Se desbloquea el '+new Date(start.getTime()+(i-1)*86400000).toLocaleDateString('es-MX',{day:'numeric',month:'long'}):'Abrir día '+i;
+    b.onclick=()=>showDay(i);grid.appendChild(b);
+  }
+}
+function showDay(i){if(i>dayNumber())return;setMessage(i);document.querySelector('.today').scrollIntoView({behavior:'smooth',block:'start'})}
+function clock(){
+  const now=new Date();let diff=reunion-now;if(diff<0)diff=0;
+  const dd=Math.floor(diff/86400000),hh=Math.floor(diff%86400000/3600000),mm=Math.floor(diff%3600000/60000),ss=Math.floor(diff%60000/1000);
+  document.getElementById('days').textContent=dd;
+  document.getElementById('hours').textContent=String(hh).padStart(2,'0');
+  document.getElementById('mins').textContent=String(mm).padStart(2,'0');
+  document.getElementById('secs').textContent=String(ss).padStart(2,'0');
+}
+render();clock();setInterval(clock,1000);
+</script>
+<div id="finalDay" style="display:none;position:fixed;inset:0;z-index:9999;background:linear-gradient(145deg,#fff3f8,#f8efff);align-items:center;justify-content:center;text-align:center;padding:28px">
+<div style="max-width:680px">
+<div style="font-size:64px">❤️✈️</div>
+<h1 style="font-size:clamp(42px,8vw,72px);margin:12px 0">HOY ES EL DÍA</h1>
+<p style="font-size:20px;line-height:1.8"><strong>0 días • 0 horas • 0 minutos • 0 segundos</strong></p>
+<p style="font-size:21px;line-height:1.7">Ya no hay nada que contar.<br><strong>Hoy vuelvo a verte, chaparrita. ❤️</strong></p>
+<p style="font-size:18px;line-height:1.7">La espera terminó.<br><strong>Ahora nos toca vivirlo. ❤️</strong></p>
+</div></div>
+</body></html>
